@@ -7,8 +7,8 @@ class Comment < ActiveRecord::Base
     if !user_attributes[:username].empty?
     self.user = User.where(:username => user_attributes[:username]).first_or_create do |u|
       u.username = user_attributes[:username]
+      end
     end
-  end
   end
 
 end
