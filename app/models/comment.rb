@@ -9,5 +9,6 @@ class Comment < ActiveRecord::Base
       u.username = user_attributes[:username]
     end
   end
+  end
 
 end
