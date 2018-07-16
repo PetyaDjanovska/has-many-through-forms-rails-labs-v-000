@@ -11,7 +11,7 @@
 <!-- Comment form -->
 
   <%= form_for :comments do |comment_builder| %>
-    <%= f.label "Write your comment here" %>
+    <%= comment_builder.label "Write your comment here" %>
     <%= f.text_field :content %>
     <%= f.collection_select(:user_id, User.all, :id, :username, {include_blank: true}) %>
     <%= f.submit "Create Comment"%>
