@@ -10,7 +10,9 @@
 
 <ul>Comments:
   <% @post.comments.each do |c| %>
-    <li><%= cat.name %></li>
+    <li><%= c.user.username %>says:
+      <%= c.content %>
+    </li>
   <% end %>
 </ul>
 
