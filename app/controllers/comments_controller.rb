@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
 
   def create
+    byebug
     comment = Comment.create(comment_params)
     byebug
     redirect_to comment.post
