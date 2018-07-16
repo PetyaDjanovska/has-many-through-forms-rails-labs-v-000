@@ -9,7 +9,7 @@
 </ul>
 
 <ul>Comments:
-  <% @post.users.each do |u| %>
+  <% @post.users.uniq.each do |u| %>
     <li><%= u.username %> says:</li>
     <% u.comments.each do |c| %>
     <%= c.content %>
