@@ -16,10 +16,11 @@ class Post < ActiveRecord::Base
     end
   end
 
-  def comment_attributes=(comment_attributes)
-    byebug
+  def comments_attributes=(comments_attributes)
+    comments_attributes.each do |i, comment_attributes|
+      self.comments.build(comment_attributes)
+    end
   end
-
 
 
 end
