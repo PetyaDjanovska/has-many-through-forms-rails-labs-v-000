@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
-    @post.comments.build
+    @post.comments = Comment.new
   end
 
   def index
@@ -29,13 +29,6 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :content, category_ids: [], categories_attributes: [:name], comments_attributes: [])
-  end
-
-
-  def comments_attributes=(comments_attributes)
-    comments_attributes.each do |i, comment_attributes|
-      self.comments.build(comment_attributes)
-    end
   end
 
 end
