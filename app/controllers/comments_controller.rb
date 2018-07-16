@@ -1,7 +1,6 @@
 class CommentsController < ApplicationController
 
   def create
-        byebug
     comment = Comment.create(comment_params)
 
 
@@ -15,9 +14,5 @@ class CommentsController < ApplicationController
   end
 
 
-  def user_attributes=(user_attributes)
-    self.user = User.where(:id => user_attributes[:user_id]).first_or_create do |u|
-      u.username = user_attributes[:username]
-    end
-  end
+
 end
