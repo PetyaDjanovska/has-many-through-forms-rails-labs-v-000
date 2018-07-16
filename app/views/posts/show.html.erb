@@ -9,7 +9,7 @@
 </ul>
 <ul>Comments:
   <% @post.comments.each do |c| %>
-    <li><%= c.user.username %>says:
+    <li><%= c.user.username if c.user %>says:
       <%= c.content %>
     </li>
   <% end %>
