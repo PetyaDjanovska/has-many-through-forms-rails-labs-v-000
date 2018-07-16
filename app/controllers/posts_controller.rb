@@ -21,6 +21,7 @@ class PostsController < ApplicationController
   end
 
   def update
+    post = Post.update
   end
 
   private
