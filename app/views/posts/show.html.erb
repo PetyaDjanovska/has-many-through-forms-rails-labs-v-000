@@ -10,7 +10,7 @@
 
 <!-- Comment form -->
 
-  <%= form_for :comment do |comment_builder| %>
+  <%= form_for :comment, method: :put do |comment_builder| %>
     <%= comment_builder.label "Write your comment here" %>
     <%= comment_builder.text_field :content %>
     <%= comment_builder.hidden_field :post_id, :value => @post.id %>
