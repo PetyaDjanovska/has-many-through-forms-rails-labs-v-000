@@ -12,8 +12,14 @@
 
   <%= form_for :comments do |comment_builder| %>
     <%= comment_builder.label "Write your comment here" %>
-    <%= f.text_field :content %>
-    <%= f.collection_select(:user_id, User.all, :id, :username, {include_blank: true}) %>
+    <%= comment_builder.text_field :content %>
+    <%= comment_builder.label :user_id %>
+    <%= comment_builder.collection_select(:user_id, User.all, :id, :username, {include_blank: true}) %>
+      <%= comment_builder.fields_for :user do |user_attributes| %>
+        <%= user_attributes.label :username %>
+        <%= user_attributes.text_field :username %>
+        <%= user_attributes.label :email %>
+        <%= user_attributes.text_field :email %>
     <%= f.submit "Create Comment"%>
   <% end %>
 
