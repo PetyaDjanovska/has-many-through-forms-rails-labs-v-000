@@ -13,7 +13,7 @@ class PostsController < ApplicationController
     2.times do
       @post.categories.build
     end
-    @post.comments.build
+    # @post.comments.build
   end
 
   def create
