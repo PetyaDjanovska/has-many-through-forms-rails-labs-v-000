@@ -10,7 +10,7 @@
 
 <ul>Comments:
   <% @post.users.uniq.each do |u| %>
-    <li><%= u.username %> says:</li>
+    <li><%= linkk_to u.username, user_path(u) %> says:</li>
     <% u.comments.each do |c| %>
     <%= c.content %>
     <% end %>
