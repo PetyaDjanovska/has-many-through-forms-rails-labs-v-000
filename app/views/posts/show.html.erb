@@ -11,6 +11,8 @@
 <ul>Comments:
   <% @post.user.each do |u| %>
     <li><%= u.username %></li>
+    <%= u.comments.each do |c| %>
+    <%= c.content %>
   <% end %>
 </ul>
 
