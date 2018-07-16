@@ -11,7 +11,7 @@
 
 <!-- Comment form -->
 
-  <%= form_for(:comment, url: post_path(@post)) do |comment_builder| %>
+  <%= form_for(:comment, url: comments_path) do |comment_builder| %>
     <%= comment_builder.label "Write your comment here" %>
     <%= comment_builder.text_field :content %>
     <%= comment_builder.hidden_field :post_id, :value => @post.id %>
