@@ -4,7 +4,6 @@ class Comment < ActiveRecord::Base
 
 
   def user_attributes=(user_attributes)
-    byebug
     self.user = User.where(:username => user_attributes[:username]).first_or_create do |u|
       u.username = user_attributes[:username]
     end
