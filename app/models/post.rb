@@ -16,5 +16,10 @@ class Post < ActiveRecord::Base
     end
   end
 
+  def comment_attributes=(comment_attributes)
+    byebug
+  end
+
+
 
 end
