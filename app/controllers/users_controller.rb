@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   end
 
   def index
+    @users= User.all
     @users.each do |u|
       u.username
     end
