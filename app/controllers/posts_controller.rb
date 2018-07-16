@@ -21,6 +21,7 @@ class PostsController < ApplicationController
   end
 
   def update
+    byebug
     @post = Post.find(params[:id])
     @post = Post.update(post_params[:comment_attributes])
   end
