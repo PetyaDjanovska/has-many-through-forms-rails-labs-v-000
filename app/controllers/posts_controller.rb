@@ -21,7 +21,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    post = Post.update
+    post = Post.update(post_params[:comment_attributes])
   end
 
   private
