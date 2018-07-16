@@ -7,11 +7,17 @@
     <li><%= cat.name %></li>
   <% end %>
 </ul>
-
+<ul>Comments:
+  <% @post.comments.each do |c| %>
+    <li><%= c.user.username %>says:
+      <%= c.content %>
+    </li>
+  <% end %>
+</ul>
 
 <!-- Comment form -->
 
-  <%= form_for:comments do |comment_builder| %>
+  <%= form_for :comments do |comment_builder| %>
     <%= comment_builder.label "Write your comment here" %>
     <%= comment_builder.text_field :content %>
     <%= comment_builder.hidden_field :post_id, :value => @post.id %>
