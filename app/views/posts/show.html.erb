@@ -19,8 +19,6 @@
       <%= comment_builder.fields_for :user_attributes do |user_attributes| %>
         <%= user_attributes.label :username %>
         <%= user_attributes.text_field :username %>
-        <%= user_attributes.label :email %>
-        <%= user_attributes.text_field :email %>
       <% end %>
     <%= comment_builder.submit "Create Comment"%>
   <% end %>
