@@ -13,7 +13,7 @@
   <%= form_for :comments do |comment_builder| %>
     <%= comment_builder.label "Write your comment here" %>
     <%= comment_builder.text_field :content %>
-    <%= comment_builder.hidden_field :post_id = @post.id %>
+
     <%= comment_builder.label :user_id %>
     <%= comment_builder.collection_select(:user_id, User.all, :id, :username, {include_blank: true}) %>
       <%= comment_builder.fields_for :user do |user_attributes| %>
