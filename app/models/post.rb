@@ -17,6 +17,7 @@ class Post < ActiveRecord::Base
   end
 
   def comments_attributes=(comments_attributes)
+    byebug
     comments_attributes.each do |i, comment_attributes|
       self.comments.build(comment_attributes)
     end
